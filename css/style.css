@@ -16,9 +16,10 @@ body {
 
 nav {
   z-index: 5;
+  opacity: 0.8;
   position: fixed;
   top: 0px;
-  background-color: #333333;
+  background-color: black;
   height: 6.825vh;
   overflow: hidden;
   display: -webkit-box;
@@ -38,6 +39,8 @@ nav .logo {
   font-size: 20px;
   color: #d6d6d5;
   cursor: pointer;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 nav .logo:hover {
@@ -67,19 +70,74 @@ nav .links li:hover {
   color: white;
 }
 
-nav .search-container p {
+nav #search-btn {
   font-size: 14px;
   cursor: pointer;
+  color: #d6d6d5;
+}
+
+nav #search-btn:hover {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  color: white;
+}
+
+nav .search-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  opacity: 1;
+  z-index: 6;
+  height: 100%;
+  width: 100vw;
+}
+
+nav .search-container .search-input {
+  z-index: 7;
+  padding: 0px;
+  width: 40%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: #d6d6d5;
+  font-size: 0.7rem;
+  font-weight: lighter;
+}
+
+nav .search-container .search-icon {
+  z-index: 8;
+  pointer-events: none;
+  color: #d6d6d5;
+  font-weight: lighter;
+  font-size: 0.75rem;
+  display: block;
+  margin-right: 10px;
+}
+
+nav .search-container .exit-btn {
+  cursor: pointer;
+  z-index: 8;
+  font-weight: lighter;
+  font-size: 0.75rem;
   color: #d6d6d5;
   -webkit-transition: 500ms;
   transition: 500ms;
 }
 
-nav .search-container p:hover {
+nav .search-container .exit-btn:hover {
   color: white;
 }
 
-nav .search-container input {
+nav .hider {
   display: none;
 }
 
@@ -93,6 +151,33 @@ nav .bag {
 
 nav .bag:hover {
   color: white;
+}
+
+nav .nav-animator {
+  -webkit-animation-name: nav-hider;
+          animation-name: nav-hider;
+  -webkit-animation-duration: 600ms;
+          animation-duration: 600ms;
+}
+
+nav .show-search-animator {
+  -webkit-animation-name: search-shower;
+          animation-name: search-shower;
+  -webkit-animation-duration: 1200ms;
+          animation-duration: 1200ms;
+}
+
+.dark-overlay {
+  position: fixed;
+  z-index: 4;
+  background-color: black;
+  opacity: 0.5;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hider {
+  display: none;
 }
 
 .covid-notice {
@@ -158,10 +243,11 @@ nav .bag:hover {
 .all-products-description .product-container {
   z-index: 0;
   height: 93vh;
-  max-width: 48.5vw;
-  min-width: 48vw;
+  max-width: 48.5%;
+  min-width: 47%;
+  width: auto;
   background-color: #fafafa;
-  margin: 1vh 0vw 1vh 1vw;
+  margin: 1vh 0% 1vh 1%;
   margin-left: 0.5vw;
   overflow: hidden;
 }
@@ -267,9 +353,14 @@ nav .bag:hover {
   background-color: #efefef;
 }
 
+.all-products-description .oprah a img {
+  height: 80%;
+  width: auto;
+}
+
 .all-products-description .small-container {
-  margin-right: 0.5vw;
-  margin-left: 0.5vw;
+  margin-right: 0vw;
+  margin-left: 0.75vw;
 }
 
 .all-products-description .small-container a .more-links span {
@@ -293,6 +384,7 @@ footer {
   padding-right: 15%;
   padding-left: 15%;
   padding-top: 1.25%;
+  margin-top: 0.5rem;
   font-size: 0.5rem;
   color: #a1a1a1;
 }
@@ -370,5 +462,313 @@ footer .copyright-container .country {
   margin-left: 91.25%;
   -webkit-transform: translateY(-212.5%);
           transform: translateY(-212.5%);
+}
+
+@media screen and (max-width: 1243px) {
+  footer .copyright-container .policy-link {
+    width: 75%;
+    height: 35px;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  footer .copyright-container .country {
+    -webkit-transform: translateY(-150%);
+            transform: translateY(-150%);
+  }
+}
+
+@media screen and (max-width: 733px) {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 7.5%;
+  }
+  nav .ham {
+    cursor: pointer;
+    z-index: 5;
+    font-size: 16px;
+    color: #d6d6d5;
+    -webkit-transition: 500ms;
+    transition: 500ms;
+  }
+  nav .ham:hover {
+    color: white;
+  }
+  nav .links {
+    display: none;
+  }
+  nav #search-btn {
+    display: none;
+  }
+  .show-ham-links {
+    height: 100vh;
+    opacity: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: inherit;
+        -ms-flex-align: inherit;
+            align-items: inherit;
+    -webkit-animation-name: ham-show-animation;
+            animation-name: ham-show-animation;
+    -webkit-animation-duration: 800ms;
+            animation-duration: 800ms;
+  }
+  .show-ham-links .ham {
+    display: none;
+  }
+  .show-ham-links .logo {
+    margin: 0.25rem auto 0px auto;
+    z-index: 8;
+    font-size: 24px;
+  }
+  .show-ham-links .links {
+    z-index: 8;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 4.25rem;
+    left: 0px;
+    border-top: 0.25px solid #a1a1a1;
+    padding: 2.5% 7.5% 0% 5%;
+  }
+  .show-ham-links .links li {
+    color: #a1a1a1;
+    font-size: 0.75rem;
+    padding-top: 0.75%;
+    padding-bottom: 2.25%;
+    border-bottom: 0.05px solid #a1a1a1;
+  }
+  .show-ham-links .search-container {
+    display: block;
+  }
+  .show-ham-links .search-container .search-input {
+    margin-top: 2rem;
+    background-color: #1d1d1f;
+    height: 1.5rem;
+    width: 87.5%;
+    border-radius: 7.5px;
+    padding: 0px 4%;
+  }
+  .show-ham-links .search-container .search-icon {
+    width: 1rem;
+    position: absolute;
+    font-size: 12px;
+    top: 2.375rem;
+    left: 0.325rem;
+  }
+  .show-ham-links .search-container .exit-btn {
+    position: absolute;
+    top: 0.6rem;
+  }
+  .all-products-description .product-container {
+    height: 70vh;
+    max-width: 100vw;
+    min-width: 100vw;
+    margin: 1vh 0vw 1vh 0vw;
+    margin-left: 0vw;
+  }
+  .all-products-description .product-container a {
+    padding-top: 3.75%;
+    padding-left: 0px;
+  }
+  .all-products-description .product-container a h1 {
+    font-size: 1rem;
+  }
+  .all-products-description .product-container a h2 {
+    font-size: 0.625rem;
+  }
+  .all-products-description .product-container a p {
+    font-size: 0.6rem;
+  }
+  .all-products-description .product-container a span {
+    margin-right: 0.34rem;
+    font-size: 0.65rem;
+  }
+  .all-products-description .product-container a .more-links {
+    margin-top: 0.5rem;
+  }
+  .all-products-description .product-container a img {
+    left: auto;
+    right: auto;
+    height: 70%;
+    width: auto;
+  }
+  .all-products-description .top {
+    height: 50vh;
+  }
+  .all-products-description .top a img {
+    width: 100%;
+    height: auto;
+  }
+  .all-products-description .iphone-11 a img {
+    -webkit-transform: translateX(0.5%);
+            transform: translateX(0.5%);
+  }
+  .all-products-description .oprah a img {
+    height: 80%;
+    width: auto;
+  }
+  footer {
+    width: 100vw;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  footer .footer-links-container {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+  footer .footer-links-container .footer-links-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 0.1px solid #a1a1a1;
+    font-weight: lighter;
+  }
+  footer .footer-links-container .footer-links-title .footer-links-show {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+    position: relative;
+    margin-top: -15px;
+    margin-bottom: 5px;
+    margin-right: 0px;
+    margin-left: auto;
+    display: block;
+    font-weight: lighter;
+  }
+  footer .footer-links-container .footer-links li {
+    display: none;
+  }
+  footer .footer-links-container .footer-links .shower {
+    display: block;
+    -webkit-animation-name: footer-link-shower;
+            animation-name: footer-link-shower;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+  }
+  footer .copyright-container .policy-link {
+    height: 35px;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  footer .copyright-container .country {
+    -webkit-transform: translateY(-150%);
+            transform: translateY(-150%);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .iphone-11 a img {
+    -webkit-transform: translate(-0.5%, 77.5%);
+            transform: translate(-0.5%, 77.5%);
+  }
+}
+
+.shower {
+  display: block;
+}
+
+@-webkit-keyframes footer-link-shower {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 17px;
+  }
+}
+
+@keyframes footer-link-shower {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 17px;
+  }
+}
+
+@-webkit-keyframes nav-hider {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0.5;
+  }
+}
+
+@keyframes nav-hider {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes search-shower {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes search-shower {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes ham-show-animation {
+  0% {
+    height: 6.825vh;
+  }
+  100% {
+    height: 100vh;
+  }
+}
+
+@keyframes ham-show-animation {
+  0% {
+    height: 6.825vh;
+  }
+  100% {
+    height: 100vh;
+  }
 }
 /*# sourceMappingURL=style.css.map */

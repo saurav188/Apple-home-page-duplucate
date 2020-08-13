@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
+    <nav class="">
+        <div class="ham"><i class="fas fa-bars"></i></div>
         <div class="logo">
             <i class="fab fa-apple"></i>
         </div>
@@ -22,14 +23,17 @@
             <li>Music</li>
             <li>Support</li>
         </ul>
-        <div class="search-container">
-            <p><i class="fas fa-search"></i></p>
-            <input type="text" name="seach" value="Search apple.com" id="">
+        <div class="search-container hider">
+            <p class="search-icon"><i class="fas fa-search"></i></p>
+            <input class="search-input" type="text" name="seach" placeholder="Search apple.com" id="">
+            <p class="exit-btn"><i class="fas fa-times"></i></p>
         </div>
+        <div id="search-btn"><i class="fas fa-search"></i></div>
         <div class="bag">
             <i class="fas fa-shopping-bag"></i>
         </div>
     </nav>
+    <div class="dark-overlay hider"></div>
     <div class="covid-notice">
         <a href="#">Evaluate COVID‑19 symptoms and understand next steps <i class="fas fa-angle-right"></i></a>
     </div>
@@ -64,7 +68,7 @@
         </div>
         <div class="product-container top oprah">
             <a href="#">
-                <img src="img/opprah.JPG" alt="">
+                <img src="img/opprah.JPG" alt=""><br>
                 <span>Watch Now <i class="fas fa-angle-right"></i></span>
             </a>
         </div>
@@ -155,8 +159,7 @@
             Magic Keyboard sold separately.<br><br><hr><br>
         </div>
         <div class="footer-links-container">
-            <h6 class="footer-links-title">Shop and Learn</h6>
-            <button class="footer-links-show">+</button>
+            <h6 class="footer-links-title">Shop and Learn<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Mac</li>
                 <li>iPad</li>
@@ -169,9 +172,8 @@
                 <li>iPod touch</li>
                 <li>Accessories</li>
                 <li>Gift Cards</li>
-            </ul><br>
-            <h6 class="footer-links-title">Service</h6>
-            <button class="footer-links-show">+</button>
+            </ul>
+            <h6 class="footer-links-title">Service<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Apple Music</li>
                 <li>Apple News+</li>
@@ -181,15 +183,13 @@
                 <li>Apple Card</li>
                 <li>iCloud</li>
             </ul>
-            <h6 class="footer-links-title">Account</h6>
-            <button class="footer-links-show">+</button>
+            <h6 class="footer-links-title">Account<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Manage Your Apple ID</li>
                 <li>Apple Store Account</li>
                 <li>ICloud.com</li>
             </ul>
-            <h6 class="footer-links-title">Apple Store</h6>
-            <button class="footer-links-show">+</button>
+            <h6 class="footer-links-title">Apple Store<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Find a Store</li>
                 <li>Shop Online</li>
@@ -203,34 +203,29 @@
                 <li>Order Status</li>
                 <li>Shopping Help</li>
             </ul>
-            <h6 class="footer-links-title">For Business</h6>
-            <button class="footer-links-show">+</button>
+            <h6 class="footer-links-title">For Business<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Apple and Business</li>
                 <li>Shop for Business</li>
             </ul>
-            <h6 class="footer-links-title">For Education</h6>
-            <button class="footer-links-show">+</button>
+            <h6 class="footer-links-title">For Education<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Apple and Education</li>
                 <li>Shop for K-12</li>
                 <li>Shop for College</li>
             </ul>
-            <h6 class="footer-links-title">For Healthcare</h6>
-            <button class="footer-links-show">+</button>
+            <h6 class="footer-links-title">For Healthcare<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Apple in Healthcare</li>
                 <li>Health on Apple Warch</li>
                 <li>Health Records on iPhone</li>
             </ul>
-            <h6 class="footer-links-title">For Government</h6>
-            <button class="footer-links-show">+</button>
+            <h6 class="footer-links-title">For Government<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Shop for Government</li>
                 <li>Shop for Veterans and Military</li>
             </ul>
-            <h6 class="footer-links-title">Apple Values</h6>
-            <button class="footer-links-show">+</button>
+            <h6 class="footer-links-title">Apple Values<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Accessibility</li>
                 <li>Education</li>
@@ -239,8 +234,7 @@
                 <li>Privacy</li>
                 <li>Supplier Responsibility</li>
             </ul>
-            <h6 class="footer-links-title">About Apple</h6>
-            <button class="footer-links-show">+</button>
+            <h6 class="footer-links-title">About Apple<button class="footer-links-show">+</button></h6>
             <ul class="footer-links">
                 <li>Newsroom</li>
                 <li>Apple Leadership</li>
@@ -269,5 +263,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
