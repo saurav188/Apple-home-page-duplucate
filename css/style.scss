@@ -541,8 +541,9 @@ footer{
     footer{
         width: 100vw;
         padding-left: 5%;
-        padding-right: 5%;
+        padding-right: 10%;
         .footer-links-container{
+            width: 90%;
             column-count: 1;
             .footer-links-title{
                 margin-top: 5px;
@@ -590,6 +591,26 @@ footer{
         a{
             img{
                 transform: translate(-0.5%,77.5%);
+            }
+        }
+    }
+}
+@media screen and (max-width:530px){
+    .all-products-description{
+        .product-container{
+            a{
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .oprah{
+            a{
+                img{
+                    height: 70%;
+                    width: auto;
+                }
             }
         }
     }

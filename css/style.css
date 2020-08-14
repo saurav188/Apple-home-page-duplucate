@@ -617,9 +617,10 @@ footer .copyright-container .country {
   footer {
     width: 100vw;
     padding-left: 5%;
-    padding-right: 5%;
+    padding-right: 10%;
   }
   footer .footer-links-container {
+    width: 90%;
     -webkit-column-count: 1;
             column-count: 1;
   }
@@ -667,6 +668,17 @@ footer .copyright-container .country {
   .iphone-11 a img {
     -webkit-transform: translate(-0.5%, 77.5%);
             transform: translate(-0.5%, 77.5%);
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .all-products-description .product-container a img {
+    width: 100%;
+    height: auto;
+  }
+  .all-products-description .oprah a img {
+    height: 70%;
+    width: auto;
   }
 }
 
