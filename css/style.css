@@ -617,10 +617,9 @@ footer .copyright-container .country {
   footer {
     width: 100vw;
     padding-left: 5%;
-    padding-right: 10%;
+    padding-right: 7.5%;
   }
   footer .footer-links-container {
-    width: 90%;
     -webkit-column-count: 1;
             column-count: 1;
   }
