@@ -221,14 +221,20 @@ nav .show-search-animator {
       -ms-flex-align: center;
           align-items: center;
   font-size: 14px;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
-.small-description a {
+.small-description p {
+  text-align: center;
+}
+
+.small-description p a {
   text-decoration: none;
   color: blue;
 }
 
-.small-description a:hover {
+.small-description p a:hover {
   text-decoration: underline;
 }
 

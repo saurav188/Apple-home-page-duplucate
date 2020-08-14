@@ -166,11 +166,16 @@ nav{
     justify-content: center;
     align-items: center;
     font-size: 14px;
-    a{
-        text-decoration: none;
-        color: blue;
-        &:hover{
-            text-decoration: underline;
+    padding-right: 5%;
+    padding-left: 5%;
+    p{
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: blue;
+            &:hover{
+                text-decoration: underline;
+            }
         }
     }
 }
